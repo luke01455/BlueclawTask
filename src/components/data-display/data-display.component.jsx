@@ -31,7 +31,7 @@ const DataDisplay = ({currentDisplay}) => {
         findLargestAndSmallest(data)
     }, [currentDisplay]);
 
-    console.log(data)
+
     return (
         <div className='data-display-container'>
             <div className='high-low-container'>
@@ -39,7 +39,7 @@ const DataDisplay = ({currentDisplay}) => {
                     <h3 className='hi-lo-subtitle'> Highest CO2 Emissions: </h3>
                     {
                         largestAndSmallest[0] ?
-                        <div className='info-container'> <h1>{largestAndSmallest[0].name} : </h1> <h2> {largestAndSmallest[0].avgEmissions}</h2> </div> :
+                        <div className='info-container'> <h1>{largestAndSmallest[0].name} : </h1> <h2> {largestAndSmallest[0].avgEmissions}g/km</h2> </div> :
                         <h1> loading... </h1>
                     }
                     
@@ -48,7 +48,7 @@ const DataDisplay = ({currentDisplay}) => {
                     <h3> Lowest CO2 Emissions: </h3>
                     {
                         largestAndSmallest[1] ?
-                        <div className='info-container'> <h1> {largestAndSmallest[1].name} :</h1> <h2> {largestAndSmallest[1].avgEmissions}</h2> </div>:
+                        <div className='info-container'> <h1> {largestAndSmallest[1].name} :</h1> <h2> {largestAndSmallest[1].avgEmissions}g/km</h2> </div>:
                         <h1> loading... </h1>
                     }
                 </div>
@@ -68,7 +68,7 @@ const DataDisplay = ({currentDisplay}) => {
                     <Table.Row key={carInfo.avgEmissions}>
                         <Table.Cell className='selectable'> {carInfo.ranking}</Table.Cell>
                         <Table.Cell >{carInfo.name}</Table.Cell>
-                        <Table.Cell>{carInfo.avgEmissions}</Table.Cell>
+                        <Table.Cell>{carInfo.avgEmissions}g/km</Table.Cell>
                     </Table.Row>
                     ))}
                   <Table.Row >

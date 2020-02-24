@@ -5,7 +5,6 @@ import { data } from '../../data/car-info'
 
 const DataDisplay = ({currentDisplay}) => {
     let [largestAndSmallest, setLargestAndSmallest] = useState([])
-    //let largestAndSmallest = [];
 
     const findLargestAndSmallest = (data) => {
         let currentLargest = 0
@@ -37,10 +36,10 @@ const DataDisplay = ({currentDisplay}) => {
         <div className='data-display-container'>
             <div className='high-low-container'>
                 <div className='high-container'>
-                    <h3> Highest CO2 Emissions: </h3>
+                    <h3 className='hi-lo-subtitle'> Highest CO2 Emissions: </h3>
                     {
                         largestAndSmallest[0] ?
-                        <h1>{largestAndSmallest[0].name} {largestAndSmallest[0].avgEmissions} </h1> :
+                        <div className='info-container'> <h1>{largestAndSmallest[0].name} : </h1> <h2> {largestAndSmallest[0].avgEmissions}</h2> </div> :
                         <h1> loading... </h1>
                     }
                     
@@ -49,13 +48,13 @@ const DataDisplay = ({currentDisplay}) => {
                     <h3> Lowest CO2 Emissions: </h3>
                     {
                         largestAndSmallest[1] ?
-                        <h1> {largestAndSmallest[1].name} {largestAndSmallest[1].avgEmissions} </h1> :
+                        <div className='info-container'> <h1> {largestAndSmallest[1].name} :</h1> <h2> {largestAndSmallest[1].avgEmissions}</h2> </div>:
                         <h1> loading... </h1>
                     }
                 </div>
                 
             </div>
-            <Table celled className="ui table">
+            <Table basic className='semantic-ui-table' >
                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell>Rank</Table.HeaderCell>

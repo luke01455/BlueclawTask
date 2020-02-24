@@ -10,9 +10,10 @@ const HomePage = () => {
     return (
         <div className='homepage-container'>
             <div className='button-container'>
-                <button onClick={() => setCurrentDisplay(0)} > Manufacturer </button>
-                <button onClick={() => setCurrentDisplay(1)} > Body Style </button>
-                <button onClick={() => setCurrentDisplay(2)} > Fuel Type </button>
+                <h3 className='buttons-title'> SELECT OPTION BELOW TO VIEW: </h3>
+                <DataButton active={currentDisplay === 0 ? 'true' : ''} as='button' onClick={() => setCurrentDisplay(0)} > MANUFACTURER </DataButton>
+                <DataButton active={currentDisplay === 1 ? 'true' : ''} as='button' onClick={() => setCurrentDisplay(1)} > BODY STYLE </DataButton>
+                <DataButton active={currentDisplay === 2 ? 'true' : ''} onClick={() => setCurrentDisplay(2)} > FUEL TYPE </DataButton>
             </div>
             <DataDisplay currentDisplay={currentDisplay}/>
         </div>

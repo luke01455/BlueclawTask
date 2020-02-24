@@ -2,12 +2,29 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    font-family: 'Open Sans', ;
 
+    @media screen and (max-width: 1000px) {
+        flex-direction: column;
+    }
+    
+    .buttons-title{
+        font-size: 0.8em;
+    }
     .button-container {
-        width: 500px;
-        height: 500px;
-        background-color: grey;
+        margin-top: 20vh;
+        width: 30vw;
+        height: 40vh;
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+
+        @media screen and (max-width: 1000px) {
+            width: 100vw;
+            height: 30vh;
+            margin-top: 10px;
+        }
     }
 }

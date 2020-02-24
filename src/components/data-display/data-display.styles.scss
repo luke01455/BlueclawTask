@@ -1,5 +1,5 @@
 .data-display-container {
-    height: 100vh;
+    height: 70vh;
     width: 70vw;
     background: url("../../assets/images/shutterstock_1075477754.jpg") no-repeat center center;
     -webkit-background-size: cover;
@@ -9,4 +9,55 @@
     display: flex;
     flex-direction: column;
     align-content: center;
+    margin-top: 10vh;
+    margin-right: 5vw;
+
+    @media screen and (max-width: 1000px) {
+        width: 100vw;
+        height: 900px;
+        margin-top: 10px;
+    }
+
+    .high-low-container {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+
+        @media screen and (max-width: 1000px) {
+            flex-direction: column;
+        }
+
+        .high-container {
+            h1 {
+                color: red;
+            }
+            h2 {
+                color: red;
+            }
+        }
+        .low-container {
+            h1 {
+                color: green;
+            }
+            h2 {
+                color: green;
+            }
+        }
+        .info-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+    }
+
+    .semantic-ui-table {
+        background: rgba(255,255,255,0.8);
+        margin-left: 25px;
+        margin-right: 25px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        color: black;
+    }
+
 }
